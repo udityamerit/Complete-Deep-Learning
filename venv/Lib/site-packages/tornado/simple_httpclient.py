@@ -429,9 +429,9 @@ class _HTTPConnection(httputil.HTTPMessageDelegate):
                 self.request.method == "POST"
                 and "Content-Type" not in self.request.headers
             ):
-                self.request.headers[
-                    "Content-Type"
-                ] = "application/x-www-form-urlencoded"
+                self.request.headers["Content-Type"] = (
+                    "application/x-www-form-urlencoded"
+                )
             if self.request.decompress_response:
                 self.request.headers["Accept-Encoding"] = "gzip"
             req_path = (self.parsed.path or "/") + (
@@ -547,7 +547,7 @@ class _HTTPConnection(httputil.HTTPMessageDelegate):
         value: Optional[BaseException],
         tb: Optional[TracebackType],
     ) -> bool:
-        if self.final_callback:
+        if self.final_callback is not None:
             self._remove_timeout()
             if isinstance(value, StreamClosedError):
                 if value.real_error is None:
