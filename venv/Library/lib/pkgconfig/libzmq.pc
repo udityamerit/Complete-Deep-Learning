@@ -1,0 +1,12 @@
+prefix=c:/Users/Uditya/Documents/GitHub/Complete-Deep-Learning/venv/Library
+exec_prefix=c:/Users/Uditya/Documents/GitHub/Complete-Deep-Learning/venv/Library
+libdir=c:/Users/Uditya/Documents/GitHub/Complete-Deep-Learning/venv/Library/lib
+includedir=c:/Users/Uditya/Documents/GitHub/Complete-Deep-Learning/venv/Library/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.4
+Libs: -L${libdir} -lzmq
+Libs.private: -lstdc++ 
+Requires.private: 
+Cflags: -I${includedir} 
